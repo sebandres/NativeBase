@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { View, ViewPropTypes } from "react-native";
+import PropTypes from 'prop-types'; // ES6
 
 import { connectStyle } from "native-base-shoutem-theme";
 import variables from "../theme/variables/platform";
@@ -17,7 +18,7 @@ class Badge extends Component {
 
 Badge.propTypes = {
   ...ViewPropTypes,
-  style: React.PropTypes.object
+  style: PropTypes.object
 };
 
 const StyledBadge = connectStyle("NativeBase.Badge", {}, mapPropsToStyleNames)(

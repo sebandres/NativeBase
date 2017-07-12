@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'; // ES6
 import { TouchableHighlight, Platform, TouchableNativeFeedback, View } from 'react-native';
 
 import { connectStyle } from 'native-base-shoutem-theme';
@@ -7,7 +8,7 @@ import variable from '../theme/variables/platform';
 
 class ListItem extends Component {
 	static contextTypes = {
-		theme: React.PropTypes.object,
+		theme: PropTypes.object,
 	};
 	render() {
 		const variables = this.context.theme ? this.context.theme['@@shoutem.theme/themeStyle'].variables : variable;
@@ -51,9 +52,9 @@ class ListItem extends Component {
 
 ListItem.propTypes = {
 	...TouchableHighlight.propTypes,
-	style: React.PropTypes.object,
-	itemDivider: React.PropTypes.bool,
-	button: React.PropTypes.bool,
+	style: PropTypes.object,
+	itemDivider: PropTypes.bool,
+	button: PropTypes.bool,
 };
 
 const StyledListItem = connectStyle('NativeBase.ListItem', {}, mapPropsToStyleNames)(ListItem);

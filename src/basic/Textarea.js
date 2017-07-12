@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'; // ES6
 import { TextInput } from "react-native";
 import { connectStyle } from "native-base-shoutem-theme";
 import variables from "../theme/variables/platform";
@@ -42,10 +43,10 @@ class Textarea extends Component {
 
 Textarea.propTypes = {
   ...TextInput.propTypes,
-  style: React.PropTypes.object,
-  rowSpan: React.PropTypes.number,
-  bordered: React.PropTypes.bool,
-  underline: React.PropTypes.bool
+  style: PropTypes.object,
+  rowSpan: PropTypes.number,
+  bordered: PropTypes.bool,
+  underline: PropTypes.bool
 };
 
 const StyledTextarea = connectStyle(

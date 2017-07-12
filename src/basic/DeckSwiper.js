@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'; // ES6
 import { View, Animated, PanResponder, ViewPropTypes } from "react-native";
 import clamp from "clamp";
 import { connectStyle } from "native-base-shoutem-theme";
@@ -330,8 +331,8 @@ class DeckSwiper extends Component {
 
 DeckSwiper.propTypes = {
   ...ViewPropTypes,
-  style: React.PropTypes.object,
-  dataSource: React.PropTypes.array
+  style: PropTypes.object,
+  dataSource: PropTypes.array
 };
 
 const StyledDeckSwiper = connectStyle(

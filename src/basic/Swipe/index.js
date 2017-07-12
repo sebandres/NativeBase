@@ -1,10 +1,11 @@
 import tweenState from "react-tween-state";
+import PropTypes from 'prop-types'; // ES6
 import NativeButton from "./NativeButton";
 import styles from "./styles";
 import { connectStyle } from "native-base-shoutem-theme";
 import mapPropsToStyleNames from "../../Utils/mapPropsToStyleNames";
 
-import React, { Component, PropTypes } from "react";
+import React, { Component } from "react";
 
 import {
   PanResponder,
@@ -382,9 +383,9 @@ Swipeout.SwipeoutButton = SwipeoutBtn;
 
 Swipeout.propTypes = {
   ...ViewPropTypes,
-  style: React.PropTypes.object,
-  dataArray: React.PropTypes.object,
-  renderRow: React.PropTypes.object
+  style: PropTypes.object,
+  dataArray: PropTypes.object,
+  renderRow: PropTypes.object
 };
 
 const StyledSwipeout = connectStyle(

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'; // ES6
 import { View, Modal, Platform, ViewPropTypes, Animated } from "react-native";
 import { connectStyle } from "native-base-shoutem-theme";
 import { Text } from "./Text";
@@ -110,7 +111,7 @@ class ToastContainer extends Component {
 
 ToastContainer.propTypes = {
   ...ViewPropTypes,
-  style: React.PropTypes.object
+  style: PropTypes.object
 };
 
 const StyledToastContainer = connectStyle(

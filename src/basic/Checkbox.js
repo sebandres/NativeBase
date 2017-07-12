@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'; // ES6
 import { TouchableOpacity, Platform } from "react-native";
 import IconNB from "react-native-vector-icons/Ionicons";
 import { connectStyle } from "native-base-shoutem-theme";
@@ -9,7 +10,7 @@ import computeProps from "../Utils/computeProps";
 
 class CheckBox extends Component {
   static contextTypes = {
-    theme: React.PropTypes.object
+    theme: PropTypes.object
   };
 
   getInitialStyle(variables) {
@@ -62,8 +63,8 @@ class CheckBox extends Component {
 
 CheckBox.propTypes = {
   ...TouchableOpacity.propTypes,
-  style: React.PropTypes.object,
-  checked: React.PropTypes.bool
+  style: PropTypes.object,
+  checked: PropTypes.bool
 };
 
 const StyledCheckBox = connectStyle(

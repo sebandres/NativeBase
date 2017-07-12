@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'; // ES6
 
 import { Platform } from "react-native";
 import { connectStyle } from "native-base-shoutem-theme";
@@ -12,7 +13,7 @@ import mapPropsToStyleNames from "../../Utils/mapPropsToStyleNames";
 
 class Icon extends Component {
   static contextTypes = {
-    theme: React.PropTypes.object
+    theme: PropTypes.object
   };
 
   getName() {
@@ -92,11 +93,11 @@ class Icon extends Component {
 
 Icon.propTypes = {
   ...IconNB.propTypes,
-  style: React.PropTypes.object,
-  name: React.PropTypes.string,
-  ios: React.PropTypes.string,
-  android: React.PropTypes.string,
-  active: React.PropTypes.bool
+  style: PropTypes.object,
+  name: PropTypes.string,
+  ios: PropTypes.string,
+  android: PropTypes.string,
+  active: PropTypes.bool
 };
 
 const StyledIcon = connectStyle("NativeBase.Icon", {}, mapPropsToStyleNames)(

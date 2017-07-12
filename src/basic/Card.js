@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { View, ListView, ViewPropTypes } from "react-native";
+import PropTypes from 'prop-types'; // ES6
 
 import { connectStyle } from "native-base-shoutem-theme";
 import mapPropsToStyleNames from "../Utils/mapPropsToStyleNames";
@@ -30,9 +31,9 @@ class Card extends Component {
 
 Card.propTypes = {
   ...ViewPropTypes,
-  style: React.PropTypes.object,
-  dataArray: React.PropTypes.object,
-  renderRow: React.PropTypes.object
+  style: PropTypes.object,
+  dataArray: PropTypes.object,
+  renderRow: PropTypes.object
 };
 
 const StyledCard = connectStyle("NativeBase.Card", {}, mapPropsToStyleNames)(

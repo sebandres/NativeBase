@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'; // ES6
 import { TouchableOpacity, Animated, Platform, View } from 'react-native';
 import { Input } from './Input';
 import { Label } from './Label';
@@ -276,13 +277,13 @@ const childrenType = function(props, propName, component) {
 
 Item.propTypes = {
 	...TouchableOpacity.propTypes,
-	style: React.PropTypes.object,
-	inlineLabel: React.PropTypes.bool,
-	floatingLabel: React.PropTypes.bool,
-	stackedLabel: React.PropTypes.bool,
-	fixedLabel: React.PropTypes.bool,
-	success: React.PropTypes.bool,
-	error: React.PropTypes.bool,
+	style: PropTypes.object,
+	inlineLabel: PropTypes.bool,
+	floatingLabel: PropTypes.bool,
+	stackedLabel: PropTypes.bool,
+	fixedLabel: PropTypes.bool,
+	success: PropTypes.bool,
+	error: PropTypes.bool,
 };
 
 const StyledItem = connectStyle('NativeBase.Item', {}, mapPropsToStyleNames)(Item);

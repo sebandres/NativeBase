@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'; // ES6
 import { View, StatusBar, ViewPropTypes } from "react-native";
 import { connectStyle } from "native-base-shoutem-theme";
 import mapPropsToStyleNames from "../Utils/mapPropsToStyleNames";
@@ -7,7 +8,7 @@ import _ from "lodash";
 
 class Header extends Component {
   static contextTypes = {
-    theme: React.PropTypes.object
+    theme: PropTypes.object
   };
 
   render() {
@@ -40,9 +41,9 @@ class Header extends Component {
 
 Header.propTypes = {
   ...ViewPropTypes,
-  style: React.PropTypes.object,
-  searchBar: React.PropTypes.bool,
-  rounded: React.PropTypes.bool
+  style: PropTypes.object,
+  searchBar: PropTypes.bool,
+  rounded: PropTypes.bool
 };
 
 const StyledHeader = connectStyle(

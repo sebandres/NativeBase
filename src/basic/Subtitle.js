@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'; // ES6
 import { Text } from "react-native";
 import { connectStyle } from "native-base-shoutem-theme";
 import mapPropsToStyleNames from "../Utils/mapPropsToStyleNames";
@@ -11,7 +12,7 @@ class Subtitle extends Component {
 
 Subtitle.propTypes = {
   ...Text.propTypes,
-  style: React.PropTypes.object
+  style: PropTypes.object
 };
 
 const StyledSubtitle = connectStyle(

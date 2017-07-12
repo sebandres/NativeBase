@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'; // ES6
 import { Image } from "react-native";
 import { connectStyle } from "native-base-shoutem-theme";
 import computeProps from "../Utils/computeProps";
@@ -12,10 +13,10 @@ class Thumbnail extends Component {
 
 Thumbnail.propTypes = {
   ...Image.propTypes,
-  style: React.PropTypes.object,
-  square: React.PropTypes.bool,
-  circular: React.PropTypes.bool,
-  size: React.PropTypes.number
+  style: PropTypes.object,
+  square: PropTypes.bool,
+  circular: PropTypes.bool,
+  size: PropTypes.number
 };
 
 const StyledThumbnail = connectStyle(

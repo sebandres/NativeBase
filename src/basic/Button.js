@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'; // ES6
+
 import {
   TouchableOpacity,
   Platform,
@@ -84,20 +86,20 @@ class Button extends Component {
 
 Button.propTypes = {
   ...TouchableOpacity.propTypes,
-  style: React.PropTypes.object,
-  block: React.PropTypes.bool,
-  primary: React.PropTypes.bool,
-  transparent: React.PropTypes.bool,
-  success: React.PropTypes.bool,
-  danger: React.PropTypes.bool,
-  warning: React.PropTypes.bool,
-  info: React.PropTypes.bool,
-  bordered: React.PropTypes.bool,
-  disabled: React.PropTypes.bool,
-  rounded: React.PropTypes.bool,
-  large: React.PropTypes.bool,
-  small: React.PropTypes.bool,
-  active: React.PropTypes.bool
+  style: PropTypes.object,
+  block: PropTypes.bool,
+  primary: PropTypes.bool,
+  transparent: PropTypes.bool,
+  success: PropTypes.bool,
+  danger: PropTypes.bool,
+  warning: PropTypes.bool,
+  info: PropTypes.bool,
+  bordered: PropTypes.bool,
+  disabled: PropTypes.bool,
+  rounded: PropTypes.bool,
+  large: PropTypes.bool,
+  small: PropTypes.bool,
+  active: PropTypes.bool
 };
 
 const StyledButton = connectStyle(

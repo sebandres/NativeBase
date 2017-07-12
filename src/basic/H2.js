@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'; // ES6
+
 import { Text } from "react-native";
 
 import { connectStyle } from "native-base-shoutem-theme";
@@ -23,7 +25,7 @@ const childrenType = function(props, propName, component) {
 H2.propTypes = {
   ...Text.propTypes,
   children: childrenType,
-  style: React.PropTypes.object
+  style: PropTypes.object
 };
 
 const StyledH2 = connectStyle("NativeBase.H2", {}, mapPropsToStyleNames)(H2);

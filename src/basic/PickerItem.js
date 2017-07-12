@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'; // ES6
 import { Picker } from "react-native";
 
 import { connectStyle } from "native-base-shoutem-theme";

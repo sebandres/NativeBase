@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'; // ES6
 import { View, ViewPropTypes } from "react-native";
 
 import { connectStyle } from "native-base-shoutem-theme";
@@ -30,7 +31,7 @@ class Root extends Component {
 
 Root.propTypes = {
   ...ViewPropTypes,
-  style: React.PropTypes.object
+  style: PropTypes.object
 };
 
 const StyledRoot = connectStyle("NativeBase.Root", {}, mapPropsToStyleNames)(

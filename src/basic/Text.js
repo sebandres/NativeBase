@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'; // ES6
 import { Text as RNText } from "react-native";
 import _ from 'lodash';
 
@@ -20,8 +21,8 @@ class Text extends Component {
 
 Text.propTypes = {
   ...RNText.propTypes,
-  uppercase: React.PropTypes.bool,
-  style: React.PropTypes.object
+  uppercase: PropTypes.bool,
+  style: PropTypes.object
 };
 
 Text.defaultProps = {

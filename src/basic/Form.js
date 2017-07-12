@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { View, ViewPropTypes } from "react-native";
+import PropTypes from 'prop-types'; // ES6
 
 import { connectStyle } from "native-base-shoutem-theme";
 import mapPropsToStyleNames from "../Utils/mapPropsToStyleNames";
@@ -12,7 +13,7 @@ class Form extends Component {
 
 Form.propTypes = {
   ...ViewPropTypes,
-  style: React.PropTypes.object
+  style: PropTypes.object
 };
 
 const StyledForm = connectStyle("NativeBase.Form", {}, mapPropsToStyleNames)(

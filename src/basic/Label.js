@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'; // ES6
 import { Text } from "react-native";
 
 import { connectStyle } from "native-base-shoutem-theme";
@@ -12,7 +13,7 @@ class Label extends Component {
 
 Label.propTypes = {
   ...Text.propTypes,
-  style: React.PropTypes.object
+  style: PropTypes.object
 };
 
 const StyledLabel = connectStyle("NativeBase.Label", {}, mapPropsToStyleNames)(
