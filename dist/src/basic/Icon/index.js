@@ -1,4 +1,5 @@
-Object.defineProperty(exports,"__esModule",{value:true});exports.Icon=undefined;var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _jsxFileName="src/basic/Icon/index.js";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=require("react");var _react2=_interopRequireDefault(_react);
+Object.defineProperty(exports,"__esModule",{value:true});exports.Icon=undefined;var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _jsxFileName="src\\basic\\Icon\\index.js";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=require("react");var _react2=_interopRequireDefault(_react);
+var _propTypes=require("prop-types");var _propTypes2=_interopRequireDefault(_propTypes);
 
 var _reactNative=require("react-native");
 var _nativeBaseShoutemTheme=require("native-base-shoutem-theme");
@@ -67,7 +68,7 @@ return(
 _react2.default.createElement(_IconNB.IconNB,_extends({
 ref:function ref(c){return _this2._root=c;}},
 this.props,{
-name:_reactNative.Platform.OS==="ios"?this.props.ios:this.props.android,__source:{fileName:_jsxFileName,lineNumber:67}})));
+name:_reactNative.Platform.OS==="ios"?this.props.ios:this.props.android,__source:{fileName:_jsxFileName,lineNumber:68}})));
 
 
 }else if(this.props.name&&(this.props.android||this.props.ios)){
@@ -75,7 +76,7 @@ return(
 _react2.default.createElement(_IconNB.IconNB,_extends({
 ref:function ref(c){return _this2._root=c;}},
 this.props,{
-name:this.getIconName(),__source:{fileName:_jsxFileName,lineNumber:75}})));
+name:this.getIconName(),__source:{fileName:_jsxFileName,lineNumber:76}})));
 
 
 }else{
@@ -83,20 +84,20 @@ return(
 _react2.default.createElement(_IconNB.IconNB,_extends({
 ref:function ref(c){return _this2._root=c;}},
 this.props,{
-name:this.getName(),__source:{fileName:_jsxFileName,lineNumber:83}})));
+name:this.getName(),__source:{fileName:_jsxFileName,lineNumber:84}})));
 
 
 }
-}}]);return Icon;}(_react.Component);Icon.contextTypes={theme:_react2.default.PropTypes.object};
+}}]);return Icon;}(_react.Component);Icon.contextTypes={theme:_propTypes2.default.object};
 
 
 Icon.propTypes=_extends({},
 _IconNB.IconNB.propTypes,{
-style:_react2.default.PropTypes.object,
-name:_react2.default.PropTypes.string,
-ios:_react2.default.PropTypes.string,
-android:_react2.default.PropTypes.string,
-active:_react2.default.PropTypes.bool});
+style:_propTypes2.default.object,
+name:_propTypes2.default.string,
+ios:_propTypes2.default.string,
+android:_propTypes2.default.string,
+active:_propTypes2.default.bool});
 
 
 var StyledIcon=(0,_nativeBaseShoutemTheme.connectStyle)("NativeBase.Icon",{},_mapPropsToStyleNames2.default)(

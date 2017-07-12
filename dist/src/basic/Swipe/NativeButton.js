@@ -1,4 +1,5 @@
-Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName="src/basic/Swipe/NativeButton.js";var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _react=require("react");var _react2=_interopRequireDefault(_react);
+Object.defineProperty(exports,"__esModule",{value:true});var _jsxFileName="src\\basic\\Swipe\\NativeButton.js";var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _react=require("react");var _react2=_interopRequireDefault(_react);
+var _propTypes=require("prop-types");var _propTypes2=_interopRequireDefault(_propTypes);
 
 var _reactNative=require("react-native");function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}
 
@@ -31,11 +32,11 @@ propTypes:_extends({},
 _reactNative.TouchableWithoutFeedback.propTypes,{
 textStyle:_reactNative.Text.propTypes.style,
 disabledStyle:_reactNative.Text.propTypes.style,
-children:_react.PropTypes.node.isRequired,
-underlayColor:_react.PropTypes.string,
+children:_propTypes2.default.node.isRequired,
+underlayColor:_propTypes2.default.string,
 background:_reactNative.TouchableNativeFeedback.propTypes?
 _reactNative.TouchableNativeFeedback.propTypes.background:
-_react.PropTypes.any}),
+_propTypes2.default.any}),
 
 
 statics:{
@@ -57,7 +58,7 @@ return this.props.children;
 }
 
 return(
-_react2.default.createElement(_reactNative.Text,{style:[styles.textButton,this.props.textStyle],__source:{fileName:_jsxFileName,lineNumber:60}},
+_react2.default.createElement(_reactNative.Text,{style:[styles.textButton,this.props.textStyle],__source:{fileName:_jsxFileName,lineNumber:61}},
 this.props.children));
 
 
@@ -95,8 +96,8 @@ _reactNative.TouchableNativeFeedback.SelectableBackground()});
 
 
 return(
-_react2.default.createElement(_reactNative.TouchableNativeFeedback,_extends({},buttonProps,{__source:{fileName:_jsxFileName,lineNumber:98}}),
-_react2.default.createElement(_reactNative.View,{style:[styles.button,this.props.style,disabledStyle],__source:{fileName:_jsxFileName,lineNumber:99}},
+_react2.default.createElement(_reactNative.TouchableNativeFeedback,_extends({},buttonProps,{__source:{fileName:_jsxFileName,lineNumber:99}}),
+_react2.default.createElement(_reactNative.View,{style:[styles.button,this.props.style,disabledStyle],__source:{fileName:_jsxFileName,lineNumber:100}},
 this._renderText())));
 
 
@@ -108,7 +109,7 @@ return(
 _react2.default.createElement(_reactNative.TouchableHighlight,_extends({},
 buttonProps,{
 style:[styles.button,this.props.style,disabledStyle],
-underlayColor:this.props.underlayColor,__source:{fileName:_jsxFileName,lineNumber:108}}),
+underlayColor:this.props.underlayColor,__source:{fileName:_jsxFileName,lineNumber:109}}),
 
 this._renderText()));
 

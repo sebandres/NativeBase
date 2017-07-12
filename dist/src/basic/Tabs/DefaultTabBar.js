@@ -1,4 +1,5 @@
-Object.defineProperty(exports,"__esModule",{value:true});exports.DefaultTabBar=undefined;var _jsxFileName="src/basic/Tabs/DefaultTabBar.js";
+Object.defineProperty(exports,"__esModule",{value:true});exports.DefaultTabBar=undefined;var _jsxFileName="src\\basic\\Tabs\\DefaultTabBar.js";
+var _propTypes=require("prop-types");var _propTypes2=_interopRequireDefault(_propTypes);
 
 var _nativeBaseShoutemTheme=require("native-base-shoutem-theme");
 var _platform=require("./../../theme/variables/platform");var _platform2=_interopRequireDefault(_platform);
@@ -10,18 +11,18 @@ var Button=require("./Button");
 
 var DefaultTabBar=React.createClass({displayName:"DefaultTabBar",
 propTypes:{
-goToPage:React.PropTypes.func,
-activeTab:React.PropTypes.number,
-tabs:React.PropTypes.array,
-backgroundColor:React.PropTypes.string,
-activeTextColor:React.PropTypes.string,
-inactiveTextColor:React.PropTypes.string,
+goToPage:_propTypes2.default.func,
+activeTab:_propTypes2.default.number,
+tabs:_propTypes2.default.array,
+backgroundColor:_propTypes2.default.string,
+activeTextColor:_propTypes2.default.string,
+inactiveTextColor:_propTypes2.default.string,
 tabStyle:ViewPropTypes.style,
-renderTab:React.PropTypes.func,
+renderTab:_propTypes2.default.func,
 underlineStyle:ViewPropTypes.style},
 
 contextTypes:{
-theme:React.PropTypes.object},
+theme:_propTypes2.default.object},
 
 
 getDefaultProps:function getDefaultProps(){
@@ -56,13 +57,13 @@ return(
 React.createElement(Button,{
 style:{flex:1},
 key:name,
-onPress:function onPress(){return onPressHandler(page);},__source:{fileName:_jsxFileName,lineNumber:56}},
+onPress:function onPress(){return onPressHandler(page);},__source:{fileName:_jsxFileName,lineNumber:57}},
 
 React.createElement(_index.TabHeading,{
 style:isTabActive?activeTabStyle:tabStyle,
-active:isTabActive,__source:{fileName:_jsxFileName,lineNumber:61}},
+active:isTabActive,__source:{fileName:_jsxFileName,lineNumber:62}},
 
-React.createElement(_index.Text,{style:isTabActive?activeTextStyle:textStyle,__source:{fileName:_jsxFileName,lineNumber:65}},
+React.createElement(_index.Text,{style:isTabActive?activeTextStyle:textStyle,__source:{fileName:_jsxFileName,lineNumber:66}},
 name))));
 
 
@@ -73,9 +74,9 @@ return(
 React.createElement(Button,{
 style:{flex:1},
 key:_lodash2.default.random(1.2,5.2),
-onPress:function onPress(){return onPressHandler(page);},__source:{fileName:_jsxFileName,lineNumber:73}},
+onPress:function onPress(){return onPressHandler(page);},__source:{fileName:_jsxFileName,lineNumber:74}},
 
-React.createElement(_index.TabHeading,{style:tabHeaderStyle,active:isTabActive,__source:{fileName:_jsxFileName,lineNumber:78}},
+React.createElement(_index.TabHeading,{style:tabHeaderStyle,active:isTabActive,__source:{fileName:_jsxFileName,lineNumber:79}},
 headerContent)));
 
 
@@ -103,7 +104,7 @@ inputRange:[0,1],
 outputRange:[0,containerWidth/numberOfTabs]});
 
 return(
-React.createElement(_index.TabContainer,{__source:{fileName:_jsxFileName,lineNumber:106}},
+React.createElement(_index.TabContainer,{__source:{fileName:_jsxFileName,lineNumber:107}},
 this.props.tabs.map(function(name,page){
 var isTabActive=_this.props.activeTab===page;
 var renderTab=_this.props.renderTab||_this.renderTab;
@@ -120,7 +121,7 @@ _this.props.tabHeaderStyle[page]);
 
 }),
 React.createElement(Animated.View,{
-style:[tabUnderlineStyle,{left:left},this.props.underlineStyle],__source:{fileName:_jsxFileName,lineNumber:122}})));
+style:[tabUnderlineStyle,{left:left},this.props.underlineStyle],__source:{fileName:_jsxFileName,lineNumber:123}})));
 
 
 

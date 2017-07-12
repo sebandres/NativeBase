@@ -1,4 +1,6 @@
-Object.defineProperty(exports,"__esModule",{value:true});exports.Button=undefined;var _jsxFileName="src/basic/Button.js";var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=require("react");var _react2=_interopRequireDefault(_react);
+Object.defineProperty(exports,"__esModule",{value:true});exports.Button=undefined;var _jsxFileName="src\\basic\\Button.js";var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=require("react");var _react2=_interopRequireDefault(_react);
+var _propTypes=require("prop-types");var _propTypes2=_interopRequireDefault(_propTypes);
+
 var _reactNative=require("react-native");
 
 
@@ -55,7 +57,7 @@ _react2.default.createElement(_reactNative.TouchableOpacity,_extends({},
 this.prepareRootProps(),{
 ref:function ref(c){return _this2._root=c;},
 activeOpacity:
-this.props.activeOpacity?this.props.activeOpacity:0.5,__source:{fileName:_jsxFileName,lineNumber:54}}),
+this.props.activeOpacity>0?this.props.activeOpacity:0.5,__source:{fileName:_jsxFileName,lineNumber:56}}),
 
 
 children));
@@ -71,9 +73,9 @@ this.props.androidRippleColor?
 _reactNative.TouchableNativeFeedback.Ripple(this.props.androidRippleColor):
 _reactNative.TouchableNativeFeedback.Ripple(_platform2.default.androidRippleColor)},
 
-this.prepareRootProps(),{__source:{fileName:_jsxFileName,lineNumber:66}}),
+this.prepareRootProps(),{__source:{fileName:_jsxFileName,lineNumber:68}}),
 
-_react2.default.createElement(_reactNative.View,_extends({},this.prepareRootProps(),{__source:{fileName:_jsxFileName,lineNumber:76}}),
+_react2.default.createElement(_reactNative.View,_extends({},this.prepareRootProps(),{__source:{fileName:_jsxFileName,lineNumber:78}}),
 children)));
 
 
@@ -84,20 +86,20 @@ children)));
 
 Button.propTypes=_extends({},
 _reactNative.TouchableOpacity.propTypes,{
-style:_react2.default.PropTypes.object,
-block:_react2.default.PropTypes.bool,
-primary:_react2.default.PropTypes.bool,
-transparent:_react2.default.PropTypes.bool,
-success:_react2.default.PropTypes.bool,
-danger:_react2.default.PropTypes.bool,
-warning:_react2.default.PropTypes.bool,
-info:_react2.default.PropTypes.bool,
-bordered:_react2.default.PropTypes.bool,
-disabled:_react2.default.PropTypes.bool,
-rounded:_react2.default.PropTypes.bool,
-large:_react2.default.PropTypes.bool,
-small:_react2.default.PropTypes.bool,
-active:_react2.default.PropTypes.bool});
+style:_propTypes2.default.object,
+block:_propTypes2.default.bool,
+primary:_propTypes2.default.bool,
+transparent:_propTypes2.default.bool,
+success:_propTypes2.default.bool,
+danger:_propTypes2.default.bool,
+warning:_propTypes2.default.bool,
+info:_propTypes2.default.bool,
+bordered:_propTypes2.default.bool,
+disabled:_propTypes2.default.bool,
+rounded:_propTypes2.default.bool,
+large:_propTypes2.default.bool,
+small:_propTypes2.default.bool,
+active:_propTypes2.default.bool});
 
 
 var StyledButton=(0,_nativeBaseShoutemTheme.connectStyle)(

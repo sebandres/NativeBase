@@ -1,4 +1,5 @@
-Object.defineProperty(exports,"__esModule",{value:true});exports.ListItem=undefined;var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _jsxFileName='src/basic/ListItem.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=require('react');var _react2=_interopRequireDefault(_react);
+Object.defineProperty(exports,"__esModule",{value:true});exports.ListItem=undefined;var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _jsxFileName='src\\basic\\ListItem.js';var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=require('react');var _react2=_interopRequireDefault(_react);
+var _propTypes=require('prop-types');var _propTypes2=_interopRequireDefault(_propTypes);
 var _reactNative=require('react-native');
 
 var _nativeBaseShoutemTheme=require('native-base-shoutem-theme');
@@ -23,9 +24,9 @@ _react2.default.createElement(_reactNative.TouchableHighlight,{
 onPress:this.props.onPress,
 onLongPress:this.props.onLongPress,
 ref:function ref(c){return _this2._root=c;},
-underlayColor:variables.listBtnUnderlayColor,__source:{fileName:_jsxFileName,lineNumber:22}},
+underlayColor:variables.listBtnUnderlayColor,__source:{fileName:_jsxFileName,lineNumber:23}},
 
-_react2.default.createElement(_reactNative.View,_extends({},this.props,{__source:{fileName:_jsxFileName,lineNumber:28}}),this.props.children)));
+_react2.default.createElement(_reactNative.View,_extends({},this.props,{__source:{fileName:_jsxFileName,lineNumber:29}}),this.props.children)));
 
 
 }else{
@@ -37,23 +38,23 @@ onLongPress:this.props.onLongPress,
 background:
 this.props.androidRippleColor?
 _reactNative.TouchableNativeFeedback.Ripple(this.props.androidRippleColor):
-_reactNative.TouchableNativeFeedback.Ripple(_platform2.default.androidRippleColorDark),__source:{fileName:_jsxFileName,lineNumber:33}},
+_reactNative.TouchableNativeFeedback.Ripple(_platform2.default.androidRippleColorDark),__source:{fileName:_jsxFileName,lineNumber:34}},
 
 
-_react2.default.createElement(_reactNative.View,{style:{marginLeft:-17,paddingLeft:17},__source:{fileName:_jsxFileName,lineNumber:43}},
-_react2.default.createElement(_reactNative.View,_extends({},this.props,{__source:{fileName:_jsxFileName,lineNumber:44}}),this.props.children))));
+_react2.default.createElement(_reactNative.View,{style:{marginLeft:-17,paddingLeft:17},__source:{fileName:_jsxFileName,lineNumber:44}},
+_react2.default.createElement(_reactNative.View,_extends({},this.props,{__source:{fileName:_jsxFileName,lineNumber:45}}),this.props.children))));
 
 
 
 }
-}}]);return ListItem;}(_react.Component);ListItem.contextTypes={theme:_react2.default.PropTypes.object};
+}}]);return ListItem;}(_react.Component);ListItem.contextTypes={theme:_propTypes2.default.object};
 
 
 ListItem.propTypes=_extends({},
 _reactNative.TouchableHighlight.propTypes,{
-style:_react2.default.PropTypes.object,
-itemDivider:_react2.default.PropTypes.bool,
-button:_react2.default.PropTypes.bool});
+style:_propTypes2.default.object,
+itemDivider:_propTypes2.default.bool,
+button:_propTypes2.default.bool});
 
 
 var StyledListItem=(0,_nativeBaseShoutemTheme.connectStyle)('NativeBase.ListItem',{},_mapPropsToStyleNames2.default)(ListItem);exports.

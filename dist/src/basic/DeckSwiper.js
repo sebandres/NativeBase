@@ -1,4 +1,5 @@
-Object.defineProperty(exports,"__esModule",{value:true});exports.DeckSwiper=undefined;var _jsxFileName="src/basic/DeckSwiper.js";var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=require("react");var _react2=_interopRequireDefault(_react);
+Object.defineProperty(exports,"__esModule",{value:true});exports.DeckSwiper=undefined;var _jsxFileName="src\\basic\\DeckSwiper.js";var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++){var source=arguments[i];for(var key in source){if(Object.prototype.hasOwnProperty.call(source,key)){target[key]=source[key];}}}return target;};var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=require("react");var _react2=_interopRequireDefault(_react);
+var _propTypes=require("prop-types");var _propTypes2=_interopRequireDefault(_propTypes);
 var _reactNative=require("react-native");
 var _clamp=require("clamp");var _clamp2=_interopRequireDefault(_clamp);
 var _nativeBaseShoutemTheme=require("native-base-shoutem-theme");
@@ -256,9 +257,9 @@ return[animatedCardStyles,animatedCardStyles2];
 if(this.state.disabled){
 
 return(
-_react2.default.createElement(_reactNative.View,{style:{position:"relative",flexDirection:"column"},__source:{fileName:_jsxFileName,lineNumber:259}},
+_react2.default.createElement(_reactNative.View,{style:{position:"relative",flexDirection:"column"},__source:{fileName:_jsxFileName,lineNumber:260}},
 
-_react2.default.createElement(_reactNative.View,{__source:{fileName:_jsxFileName,lineNumber:261}},
+_react2.default.createElement(_reactNative.View,{__source:{fileName:_jsxFileName,lineNumber:262}},
 this.props.renderEmpty&&this.props.renderEmpty())));
 
 
@@ -267,17 +268,17 @@ this.props.renderEmpty&&this.props.renderEmpty())));
 }else if(this.state.lastCard){
 
 return(
-_react2.default.createElement(_reactNative.View,{style:{position:"relative",flexDirection:"column"},__source:{fileName:_jsxFileName,lineNumber:270}},
+_react2.default.createElement(_reactNative.View,{style:{position:"relative",flexDirection:"column"},__source:{fileName:_jsxFileName,lineNumber:271}},
 this.state.selectedItem===undefined?
-_react2.default.createElement(_reactNative.View,{__source:{fileName:_jsxFileName,lineNumber:272}}):
-_react2.default.createElement(_reactNative.View,{__source:{fileName:_jsxFileName,lineNumber:273}},
+_react2.default.createElement(_reactNative.View,{__source:{fileName:_jsxFileName,lineNumber:273}}):
+_react2.default.createElement(_reactNative.View,{__source:{fileName:_jsxFileName,lineNumber:274}},
 _react2.default.createElement(_reactNative.Animated.View,_extends({
 style:[
 this.getCardStyles()[1],
 this.getInitialStyle().topCard,
 {opacity:this.state.fadeAnim}]},
 
-this._panResponder.panHandlers,{__source:{fileName:_jsxFileName,lineNumber:274}}),
+this._panResponder.panHandlers,{__source:{fileName:_jsxFileName,lineNumber:275}}),
 
 this.props.renderEmpty&&this.props.renderEmpty()),
 
@@ -286,7 +287,7 @@ style:[
 this.getCardStyles()[0],
 this.getInitialStyle().topCard]},
 
-this._panResponder.panHandlers,{__source:{fileName:_jsxFileName,lineNumber:284}}),
+this._panResponder.panHandlers,{__source:{fileName:_jsxFileName,lineNumber:285}}),
 
 this.props.renderItem(this.state.selectedItem)))));
 
@@ -295,17 +296,17 @@ this.props.renderItem(this.state.selectedItem)))));
 
 }
 return(
-_react2.default.createElement(_reactNative.View,{style:{position:"relative",flexDirection:"column"},__source:{fileName:_jsxFileName,lineNumber:298}},
+_react2.default.createElement(_reactNative.View,{style:{position:"relative",flexDirection:"column"},__source:{fileName:_jsxFileName,lineNumber:299}},
 this.state.selectedItem===undefined?
-_react2.default.createElement(_reactNative.View,{__source:{fileName:_jsxFileName,lineNumber:300}}):
-_react2.default.createElement(_reactNative.View,{__source:{fileName:_jsxFileName,lineNumber:301}},
+_react2.default.createElement(_reactNative.View,{__source:{fileName:_jsxFileName,lineNumber:301}}):
+_react2.default.createElement(_reactNative.View,{__source:{fileName:_jsxFileName,lineNumber:302}},
 _react2.default.createElement(_reactNative.Animated.View,_extends({
 style:[
 this.getCardStyles()[1],
 this.getInitialStyle().topCard,
 {opacity:this.state.fadeAnim}]},
 
-this._panResponder.panHandlers,{__source:{fileName:_jsxFileName,lineNumber:302}}),
+this._panResponder.panHandlers,{__source:{fileName:_jsxFileName,lineNumber:303}}),
 
 this.props.renderBottom?
 this.props.renderBottom(this.state.selectedItem2):
@@ -316,7 +317,7 @@ style:[
 this.getCardStyles()[0],
 this.getInitialStyle().topCard]},
 
-this._panResponder.panHandlers,{__source:{fileName:_jsxFileName,lineNumber:314}}),
+this._panResponder.panHandlers,{__source:{fileName:_jsxFileName,lineNumber:315}}),
 
 this.props.renderTop?
 this.props.renderTop(this.state.selectedItem):
@@ -330,8 +331,8 @@ this.props.renderItem(this.state.selectedItem)))));
 
 DeckSwiper.propTypes=_extends({},_reactNative.ViewPropTypes,{
 
-style:_react2.default.PropTypes.object,
-dataSource:_react2.default.PropTypes.array});
+style:_propTypes2.default.object,
+dataSource:_propTypes2.default.array});
 
 
 var StyledDeckSwiper=(0,_nativeBaseShoutemTheme.connectStyle)(
