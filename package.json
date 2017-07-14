@@ -41,7 +41,7 @@
     "native-base-shoutem-theme": "git+https://github.com/sean-macfarlane/theme.git",
     "print-message": "^2.1.0",
     "prop-types": "^15.5.10",
-    "react-native-drawer": "^2.3.0",
+    "react-native-drawer": "git+https://github.com/sebandres/react-native-drawer.git#react-native-0-46-1-upgrade",
     "react-native-easy-grid": "0.1.11",
     "react-native-keyboard-aware-scroll-view": "0.2.9",
     "react-native-vector-icons": "~4.1.1",
