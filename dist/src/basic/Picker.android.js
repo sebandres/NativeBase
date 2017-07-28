@@ -14,11 +14,9 @@ this.props.children));
 }}]);return PickerNB;}(_react.Component);exports.default=PickerNB;
 
 
-PickerNB.Item=_react2.default.createClass({displayName:"Item",
-render:function render(){
-return _react2.default.createElement(_reactNative.Picker.Item,_extends({},this.props(),{__source:{fileName:_jsxFileName,lineNumber:19}}));
-}});
-
+PickerNB.Item=function(props){
+return _react2.default.createElement(_reactNative.Picker.Item,_extends({},props(),{__source:{fileName:_jsxFileName,lineNumber:18}}));
+};
 
 PickerNB.propTypes=_extends({},
 _reactNative.Picker.propTypes);
