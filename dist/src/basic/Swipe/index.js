@@ -16,15 +16,15 @@ var _reactNative=require("react-native");function _interopRequireDefault(obj){re
 
 
 
-SwipeoutBtn=function(_Component){_inherits(SwipeoutBtn,_Component);function SwipeoutBtn(){_classCallCheck(this,SwipeoutBtn);return _possibleConstructorReturn(this,(SwipeoutBtn.__proto__||Object.getPrototypeOf(SwipeoutBtn)).apply(this,arguments));}_createClass(SwipeoutBtn,[{key:"render",value:function render()
-
-
-
-
-
-
-
-
+SwipeoutBtn=function(_Component){_inherits(SwipeoutBtn,_Component);function SwipeoutBtn(){var _ref;var _temp,_this,_ret;_classCallCheck(this,SwipeoutBtn);for(var _len=arguments.length,args=Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}return _ret=(_temp=(_this=_possibleConstructorReturn(this,(_ref=SwipeoutBtn.__proto__||Object.getPrototypeOf(SwipeoutBtn)).call.apply(_ref,[this].concat(args))),_this),_this.
+propTypes={
+backgroundColor:_propTypes2.default.string,
+color:_propTypes2.default.string,
+component:_propTypes2.default.node,
+onPress:_propTypes2.default.func,
+text:_propTypes2.default.string,
+type:_propTypes2.default.string,
+underlayColor:_propTypes2.default.string},_temp),_possibleConstructorReturn(_this,_ret);}_createClass(SwipeoutBtn,[{key:"render",value:function render()
 
 
 
@@ -94,13 +94,13 @@ _react2.default.createElement(_reactNative.View,{style:styleSwipeoutBtnComponent
 btn.text));
 
 
-}}],[{key:"defaultProps",get:function get(){return{backgroundColor:null,color:null,component:null,underlayColor:null,height:0,key:null,onPress:null,disabled:false,text:"Click me",type:"",width:0};}}]);return SwipeoutBtn;}(_react.Component);exports.default=SwipeoutBtn;
+}}],[{key:"defaultProps",get:function get(){return{backgroundColor:null,color:null,component:null,underlayColor:null,height:0,key:null,onPress:null,disabled:false,text:"Click me",type:"",width:0};}}]);return SwipeoutBtn;}(_react.Component);exports.default=SwipeoutBtn;var
 
 
-var Swipeout=_react2.default.createClass({displayName:"Swipeout",
-mixins:[_reactTweenState2.default.Mixin],
+Swipeout=function(_Component2){_inherits(Swipeout,_Component2);function Swipeout(){var _ref2;var _temp2,_this2,_ret2;_classCallCheck(this,Swipeout);for(var _len2=arguments.length,args=Array(_len2),_key2=0;_key2<_len2;_key2++){args[_key2]=arguments[_key2];}return _ret2=(_temp2=(_this2=_possibleConstructorReturn(this,(_ref2=Swipeout.__proto__||Object.getPrototypeOf(Swipeout)).call.apply(_ref2,[this].concat(args))),_this2),_this2.
+mixins=[_reactTweenState2.default.Mixin],_this2.
 
-propTypes:{
+propTypes={
 autoClose:_propTypes2.default.bool,
 backgroundColor:_propTypes2.default.string,
 close:_propTypes2.default.bool,
@@ -109,18 +109,18 @@ onOpen:_propTypes2.default.func,
 right:_propTypes2.default.array,
 scroll:_propTypes2.default.func,
 style:_reactNative.ViewPropTypes.style,
-sensitivity:_propTypes2.default.number},
+sensitivity:_propTypes2.default.number},_this2.
 
 
-getDefaultProps:function getDefaultProps(){
+getDefaultProps=function(){
 return{
 rowID:-1,
 sectionID:-1,
 sensitivity:0};
 
-},
+},_this2.
 
-getInitialState:function getInitialState(){
+getInitialState=function(){
 return{
 autoClose:this.props.autoClose||false,
 btnWidth:0,
@@ -134,44 +134,44 @@ swiping:false,
 tweenDuration:160,
 timeStart:null};
 
-},
+},_this2.
 
-componentWillMount:function componentWillMount(){var _this2=this;
+componentWillMount=function(){var _this3=this;
 this._panResponder=_reactNative.PanResponder.create({
 onStartShouldSetPanResponder:function onStartShouldSetPanResponder(event,gestureState){return true;},
 onMoveShouldSetPanResponder:function onMoveShouldSetPanResponder(event,gestureState){return(
-Math.abs(gestureState.dx)>_this2.props.sensitivity&&
-Math.abs(gestureState.dy)>_this2.props.sensitivity);},
+Math.abs(gestureState.dx)>_this3.props.sensitivity&&
+Math.abs(gestureState.dy)>_this3.props.sensitivity);},
 onPanResponderGrant:this._handlePanResponderGrant,
 onPanResponderMove:this._handlePanResponderMove,
 onPanResponderRelease:this._handlePanResponderEnd,
 onPanResponderTerminate:this._handlePanResponderEnd,
 onShouldBlockNativeResponder:function onShouldBlockNativeResponder(event,gestureState){return true;}});
 
-},
+},_this2.
 
-componentWillReceiveProps:function componentWillReceiveProps(nextProps){
+componentWillReceiveProps=function(nextProps){
 if(nextProps.close)this._close();
-},
+},_this2.
 
-_handlePanResponderGrant:function _handlePanResponderGrant(e,gestureState){var _this3=this;
+_handlePanResponderGrant=function(e,gestureState){var _this4=this;
 if(this.props.onOpen){
 this.props.onOpen(this.props.sectionID,this.props.rowID);
 }
 this.refs.swipeoutContent.measure(function(ox,oy,width,height){
-_this3.setState({
+_this4.setState({
 btnWidth:width/5,
-btnsLeftWidth:_this3.props.left?width/5*_this3.props.left.length:0,
-btnsRightWidth:_this3.props.right?
-width/5*_this3.props.right.length:
+btnsLeftWidth:_this4.props.left?width/5*_this4.props.left.length:0,
+btnsRightWidth:_this4.props.right?
+width/5*_this4.props.right.length:
 0,
 swiping:true,
 timeStart:new Date().getTime()});
 
 });
-},
+},_this2.
 
-_handlePanResponderMove:function _handlePanResponderMove(e,gestureState){
+_handlePanResponderMove=function(e,gestureState){
 var posX=gestureState.dx;
 var posY=gestureState.dy;
 var leftWidth=this.state.btnsLeftWidth;
@@ -192,9 +192,9 @@ this.setState({contentPos:Math.min(posX,0)});else
 if(posX>0&&this.props.left)
 this.setState({contentPos:Math.max(posX,0)});
 }
-},
+},_this2.
 
-_handlePanResponderEnd:function _handlePanResponderEnd(e,gestureState){
+_handlePanResponderEnd=function(e,gestureState){
 var posX=gestureState.dx;
 var contentPos=this.state.contentPos;
 var contentWidth=this.state.contentWidth;
@@ -245,9 +245,9 @@ this.setState({contentPos:0,openedLeft:false,openedRight:false});
 
 
 if(this.props.scroll)this.props.scroll(true);
-},
+},_this2.
 
-_tweenContent:function _tweenContent(state,endValue){
+_tweenContent=function(state,endValue){
 this.tweenState(state,{
 easing:_reactTweenState2.default.easingTypes.easeInOutQuad,
 duration:endValue===0?
@@ -255,32 +255,32 @@ this.state.tweenDuration*1.5:
 this.state.tweenDuration,
 endValue:endValue});
 
-},
+},_this2.
 
-_rubberBandEasing:function _rubberBandEasing(value,limit){
+_rubberBandEasing=function(value,limit){
 if(value<0&&value<limit)
 return limit-Math.pow(limit-value,0.85);else
 if(value>0&&value>limit)
 return limit+Math.pow(value-limit,0.85);
 return value;
-},
+},_this2.
 
 
-_autoClose:function _autoClose(btn){
+_autoClose=function(btn){
 var onPress=btn.onPress;
 if(onPress)onPress();
 if(this.state.autoClose)this._close();
-},
+},_this2.
 
-_close:function _close(){
+_close=function(){
 this._tweenContent("contentPos",0);
 this.setState({
 openedRight:false,
 openedLeft:false});
 
-},
+},_this2.
 
-render:function render(){
+render=function(){
 var contentWidth=this.state.contentWidth;
 var posX=this.getTweeningValue("contentPos");
 
@@ -337,17 +337,17 @@ this._renderButtons(this.props.right,isRightVisible,styleRight),
 this._renderButtons(this.props.left,isLeftVisible,styleLeft)));
 
 
-},
+},_this2.
 
-_onLayout:function _onLayout(event){var _event$nativeEvent$la=
+_onLayout=function(event){var _event$nativeEvent$la=
 event.nativeEvent.layout,width=_event$nativeEvent$la.width,height=_event$nativeEvent$la.height;
 this.setState({
 contentWidth:width,
 contentHeight:height});
 
-},
+},_this2.
 
-_renderButtons:function _renderButtons(buttons,isVisible,style){
+_renderButtons=function(buttons,isVisible,style){
 if(buttons&&isVisible){
 return(
 _react2.default.createElement(_reactNative.View,{style:style,__source:{fileName:_jsxFileName,lineNumber:353}},
@@ -357,9 +357,9 @@ buttons.map(this._renderButton)));
 }else{
 return _react2.default.createElement(_reactNative.View,{__source:{fileName:_jsxFileName,lineNumber:358}});
 }
-},
+},_this2.
 
-_renderButton:function _renderButton(btn,i){var _this4=this;
+_renderButton=function(btn,i){var _this5=this;
 return(
 _react2.default.createElement(SwipeoutBtn,{
 backgroundColor:btn.backgroundColor,
@@ -368,14 +368,14 @@ component:btn.component,
 disabled:btn.disabled,
 height:this.state.contentHeight,
 key:i,
-onPress:function onPress(){return _this4._autoClose(btn);},
+onPress:function onPress(){return _this5._autoClose(btn);},
 text:btn.text,
 type:btn.type,
 underlayColor:btn.underlayColor,
 width:this.state.btnWidth,__source:{fileName:_jsxFileName,lineNumber:364}}));
 
 
-}});
+},_temp2),_possibleConstructorReturn(_this2,_ret2);}return Swipeout;}(_react.Component);
 
 
 Swipeout.NativeButton=_NativeButton2.default;
