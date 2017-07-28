@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PropTypes from 'prop-types'; // ES6
+import PropTypes from 'prop-types';
 
 import { Text } from "react-native";
 
@@ -11,7 +11,7 @@ class H2 extends Component {
     return <Text ref={c => (this._root = c)} {...this.props} />;
   }
 }
-const childrenType = function(props, propName, component) {
+const childrenType = function (props, propName, component) {
   let error;
   const prop = props[propName];
   React.Children.forEach(prop, child => {
