@@ -115,14 +115,14 @@ class PickerNB extends Component {
       >
         {this.state.currentLabel
           ? <Text style={this.props.textStyle} note={this.props.note}>
-              {this.state.currentLabel}
-            </Text>
+            {this.state.currentLabel}
+          </Text>
           : <Text
-              style={this.props.textStyle}
-              note={this.props.note === false ? false : true}
-            >
-              {this.props.placeholder}
-            </Text>}
+            style={this.props.textStyle}
+            note={this.props.note === false ? false : true}
+          >
+            {this.props.placeholder}
+          </Text>}
         {this.props.iosIcon === undefined ? null : this.renderIcon()}
       </Button>
     );
@@ -132,32 +132,32 @@ class PickerNB extends Component {
     return this.props.renderHeader
       ? this.props.renderHeader(() => this._setModalVisible(false))
       : <Header style={this.props.headerStyle}>
-          <Left>
-            <Button
-              style={{
-                shadowOffset: null,
-                shadowColor: null,
-                shadowRadius: null,
-                shadowOpacity: null,
-                ...this.props.headerBackButtonStyle
-              }}
-              transparent
-              onPress={() => {
-                this._setModalVisible(false);
-              }}
-            >
-              <Text style={this.props.headerBackButtonTextStyle}>
-                {this.props.headerBackButtonText || "Back"}
-              </Text>
-            </Button>
-          </Left>
-          <Body>
-            <Title style={this.props.headerTitleStyle}>
-              {this.props.iosHeader || "Select One"}
-            </Title>
-          </Body>
-          <Right />
-        </Header>;
+        <Left>
+          <Button
+            style={{
+              shadowOffset: null,
+              shadowColor: null,
+              shadowRadius: null,
+              shadowOpacity: null,
+              ...this.props.headerBackButtonStyle
+            }}
+            transparent
+            onPress={() => {
+              this._setModalVisible(false);
+            }}
+          >
+            <Text style={this.props.headerBackButtonTextStyle}>
+              {this.props.headerBackButtonText || "Back"}
+            </Text>
+          </Button>
+        </Left>
+        <Body>
+          <Title style={this.props.headerTitleStyle}>
+            {this.props.iosHeader || "Select One"}
+          </Title>
+        </Body>
+        <Right />
+      </Header>;
   }
 
   render() {
@@ -207,11 +207,9 @@ class PickerNB extends Component {
   }
 }
 
-PickerNB.Item = React.createClass({
-  render() {
-    return <Picker.Item {...this.props()} />;
-  }
-});
+PickerNB.Item = (props) => {
+  return <Picker.Item {...props() } />;
+}
 
 PickerNB.propTypes = {
   ...ViewPropTypes,

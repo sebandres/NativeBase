@@ -1,10 +1,10 @@
-Object.defineProperty(exports,"__esModule",{value:true});exports.ScrollableTab=undefined;var _jsxFileName="src\\basic\\Tabs\\ScrollableTabBar.js";
+Object.defineProperty(exports,"__esModule",{value:true});exports.ScrollableTab=undefined;var _jsxFileName="src\\basic\\Tabs\\ScrollableTabBar.js";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _react=require("react");var _react2=_interopRequireDefault(_react);
 var _propTypes=require("prop-types");var _propTypes2=_interopRequireDefault(_propTypes);
 
 var _nativeBaseShoutemTheme=require("native-base-shoutem-theme");
 var _platform=require("./../../theme/variables/platform");var _platform2=_interopRequireDefault(_platform);
 var _index=require("./../../index");
-var _lodash=require("lodash");var _lodash2=_interopRequireDefault(_lodash);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}var React=require("react");var ReactNative=require("react-native");var
+var _lodash=require("lodash");var _lodash2=_interopRequireDefault(_lodash);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var ReactNative=require("react-native");var
 
 View=
 
@@ -16,29 +16,14 @@ View=
 ReactNative.View,Animated=ReactNative.Animated,StyleSheet=ReactNative.StyleSheet,ScrollView=ReactNative.ScrollView,Platform=ReactNative.Platform,Dimensions=ReactNative.Dimensions,ViewPropTypes=ReactNative.ViewPropTypes;
 var Button=require("./Button");
 
-var WINDOW_WIDTH=Dimensions.get("window").width;
+var WINDOW_WIDTH=Dimensions.get("window").width;var
 
-var ScrollableTabBar=React.createClass({displayName:"ScrollableTabBar",
-propTypes:{
-goToPage:_propTypes2.default.func,
-activeTab:_propTypes2.default.number,
-tabs:_propTypes2.default.array,
-backgroundColor:_propTypes2.default.string,
-activeTextColor:_propTypes2.default.string,
-inactiveTextColor:_propTypes2.default.string,
-scrollOffset:_propTypes2.default.number,
-style:ViewPropTypes.style,
-tabStyle:ViewPropTypes.style,
-tabsContainerStyle:ViewPropTypes.style,
-renderTab:_propTypes2.default.func,
-underlineStyle:ViewPropTypes.style,
-onScroll:_propTypes2.default.func},
-
-contextTypes:{
-theme:_propTypes2.default.object},
+ScrollableTabBar=function(_Component){_inherits(ScrollableTabBar,_Component);function ScrollableTabBar(){var _ref;var _temp,_this,_ret;_classCallCheck(this,ScrollableTabBar);for(var _len=arguments.length,args=Array(_len),_key=0;_key<_len;_key++){args[_key]=arguments[_key];}return _ret=(_temp=(_this=_possibleConstructorReturn(this,(_ref=ScrollableTabBar.__proto__||Object.getPrototypeOf(ScrollableTabBar)).call.apply(_ref,[this].concat(args))),_this),_this.
+contextTypes={
+theme:_propTypes2.default.object},_temp),_possibleConstructorReturn(_this,_ret);}_createClass(ScrollableTabBar,[{key:"getDefaultProps",value:function getDefaultProps()
 
 
-getDefaultProps:function getDefaultProps(){
+{
 return{
 scrollOffset:52,
 activeTextColor:"navy",
@@ -49,22 +34,22 @@ tabStyle:{},
 tabsContainerStyle:{},
 underlineStyle:{}};
 
-},
+}},{key:"getInitialState",value:function getInitialState()
 
-getInitialState:function getInitialState(){
+{
 this._tabsMeasurements=[];
 return{
 _leftTabUnderline:new Animated.Value(0),
 _widthTabUnderline:new Animated.Value(0),
 _containerWidth:null};
 
-},
+}},{key:"componentDidMount",value:function componentDidMount()
 
-componentDidMount:function componentDidMount(){
+{
 this.props.scrollValue.addListener(this.updateView);
-},
+}},{key:"updateView",value:function updateView(
 
-updateView:function updateView(offset){
+offset){
 var position=Math.floor(offset.value);
 var pageOffset=offset.value%1;
 var tabCount=this.props.tabs.length;
@@ -83,18 +68,18 @@ position===lastTabPosition))
 this.updateTabPanel(position,pageOffset);
 this.updateTabUnderline(position,pageOffset,tabCount);
 }
-},
+}},{key:"necessarilyMeasurementsCompleted",value:function necessarilyMeasurementsCompleted(
 
-necessarilyMeasurementsCompleted:function necessarilyMeasurementsCompleted(position,isLastTab){
+position,isLastTab){
 return(
 this._tabsMeasurements[position]&&(
 isLastTab||this._tabsMeasurements[position+1])&&
 this._tabContainerMeasurements&&
 this._containerMeasurements);
 
-},
+}},{key:"updateTabPanel",value:function updateTabPanel(
 
-updateTabPanel:function updateTabPanel(position,pageOffset){
+position,pageOffset){
 var containerWidth=this._containerMeasurements.width;
 var tabWidth=this._tabsMeasurements[position].width;
 var nextTabMeasurements=this._tabsMeasurements[position+1];
@@ -123,9 +108,9 @@ rightBoundScroll:
 newScrollX;
 this._scrollView.scrollTo({x:newScrollX,y:0,animated:false});
 }
-},
+}},{key:"updateTabUnderline",value:function updateTabUnderline(
 
-updateTabUnderline:function updateTabUnderline(position,pageOffset,tabCount){
+position,pageOffset,tabCount){
 var lineLeft=this._tabsMeasurements[position].left;
 var lineRight=this._tabsMeasurements[position].right;
 
@@ -144,9 +129,9 @@ this.state._widthTabUnderline.setValue(newLineRight-newLineLeft);
 this.state._leftTabUnderline.setValue(lineLeft);
 this.state._widthTabUnderline.setValue(lineRight-lineLeft);
 }
-},
+}},{key:"renderTab",value:function renderTab(
 
-renderTab:function renderTab(
+
 name,
 page,
 isTabActive,
@@ -167,17 +152,17 @@ var fontWeight=isTabActive?"bold":"normal";
 
 if(typeof name==="string"){
 return(
-React.createElement(Button,{
+_react2.default.createElement(Button,{
 key:name+"_"+page,
 onPress:function onPress(){return onPressHandler(page);},
-onLayout:onLayoutHandler,__source:{fileName:_jsxFileName,lineNumber:170}},
+onLayout:onLayoutHandler,__source:{fileName:_jsxFileName,lineNumber:155}},
 
-React.createElement(_index.TabHeading,{
+_react2.default.createElement(_index.TabHeading,{
 scrollable:true,
 style:isTabActive?activeTabStyle:tabStyle,
-active:isTabActive,__source:{fileName:_jsxFileName,lineNumber:175}},
+active:isTabActive,__source:{fileName:_jsxFileName,lineNumber:160}},
 
-React.createElement(_index.Text,{style:isTabActive?activeTextStyle:textStyle,__source:{fileName:_jsxFileName,lineNumber:180}},
+_react2.default.createElement(_index.Text,{style:isTabActive?activeTextStyle:textStyle,__source:{fileName:_jsxFileName,lineNumber:165}},
 name))));
 
 
@@ -185,22 +170,22 @@ name))));
 
 }else{
 return(
-React.createElement(Button,{key:_lodash2.default.random(1.2,5.2),onPress:function onPress(){return onPressHandler(page);},__source:{fileName:_jsxFileName,lineNumber:188}},
-React.createElement(_index.TabHeading,{scrollable:true,style:tabHeaderStyle,active:isTabActive,__source:{fileName:_jsxFileName,lineNumber:189}},
+_react2.default.createElement(Button,{key:_lodash2.default.random(1.2,5.2),onPress:function onPress(){return onPressHandler(page);},__source:{fileName:_jsxFileName,lineNumber:173}},
+_react2.default.createElement(_index.TabHeading,{scrollable:true,style:tabHeaderStyle,active:isTabActive,__source:{fileName:_jsxFileName,lineNumber:174}},
 headerContent)));
 
 
 
 }
-},
+}},{key:"measureTab",value:function measureTab(
 
-measureTab:function measureTab(page,event){var _event$nativeEvent$la=
+page,event){var _event$nativeEvent$la=
 event.nativeEvent.layout,x=_event$nativeEvent$la.x,width=_event$nativeEvent$la.width,height=_event$nativeEvent$la.height;
 this._tabsMeasurements[page]={left:x,right:x+width,width:width,height:height};
 this.updateView({value:this.props.scrollValue._value});
-},
+}},{key:"render",value:function render()
 
-render:function render(){var _this=this;
+{var _this2=this;
 var variables=this.context.theme?
 this.context.theme["@@shoutem.theme/themeStyle"].variables:_platform2.default;
 
@@ -217,18 +202,18 @@ width:this.state._widthTabUnderline};
 
 
 return(
-React.createElement(View,{
+_react2.default.createElement(View,{
 style:[
 styles.container,
 {backgroundColor:this.props.backgroundColor},
 this.props.style],
 
-onLayout:this.onContainerLayout,__source:{fileName:_jsxFileName,lineNumber:220}},
+onLayout:this.onContainerLayout,__source:{fileName:_jsxFileName,lineNumber:205}},
 
-React.createElement(ScrollView,{
+_react2.default.createElement(ScrollView,{
 automaticallyAdjustContentInsets:false,
 ref:function ref(scrollView){
-_this._scrollView=scrollView;
+_this2._scrollView=scrollView;
 },
 horizontal:true,
 showsHorizontalScrollIndicator:false,
@@ -236,47 +221,47 @@ showsVerticalScrollIndicator:false,
 directionalLockEnabled:true,
 onScroll:this.props.onScroll,
 bounces:false,
-scrollsToTop:false,__source:{fileName:_jsxFileName,lineNumber:228}},
+scrollsToTop:false,__source:{fileName:_jsxFileName,lineNumber:213}},
 
-React.createElement(View,{
+_react2.default.createElement(View,{
 style:[
 styles.tabs,
 {width:this.state._containerWidth},
 this.props.tabsContainerStyle],
 
 ref:"tabContainer",
-onLayout:this.onTabContainerLayout,__source:{fileName:_jsxFileName,lineNumber:241}},
+onLayout:this.onTabContainerLayout,__source:{fileName:_jsxFileName,lineNumber:226}},
 
 this.props.tabs.map(function(name,page){
-var isTabActive=_this.props.activeTab===page;
-var renderTab=_this.props.renderTab||_this.renderTab;
+var isTabActive=_this2.props.activeTab===page;
+var renderTab=_this2.props.renderTab||_this2.renderTab;
 return renderTab(
 name,
 page,
 isTabActive,
-_this.props.goToPage,
-_this.measureTab.bind(_this,page),
-_this.props.tabStyle[page],
-_this.props.activeTabStyle[page],
-_this.props.textStyle[page],
-_this.props.activeTextStyle[page],
-_this.props.tabHeaderStyle[page]);
+_this2.props.goToPage,
+_this2.measureTab.bind(_this2,page),
+_this2.props.tabStyle[page],
+_this2.props.activeTabStyle[page],
+_this2.props.textStyle[page],
+_this2.props.activeTextStyle[page],
+_this2.props.tabHeaderStyle[page]);
 
 }),
-React.createElement(Animated.View,{
+_react2.default.createElement(Animated.View,{
 style:[
 tabUnderlineStyle,
 dynamicTabUnderline,
-this.props.underlineStyle],__source:{fileName:_jsxFileName,lineNumber:266}})))));
+this.props.underlineStyle],__source:{fileName:_jsxFileName,lineNumber:251}})))));
 
 
 
 
 
 
-},
+}},{key:"componentWillReceiveProps",value:function componentWillReceiveProps(
 
-componentWillReceiveProps:function componentWillReceiveProps(nextProps){
+nextProps){
 
 if(
 !_lodash2.default.isEqual(this.props.tabs,nextProps.tabs)&&
@@ -284,9 +269,9 @@ this.state._containerWidth)
 {
 this.setState({_containerWidth:null});
 }
-},
+}},{key:"onTabContainerLayout",value:function onTabContainerLayout(
 
-onTabContainerLayout:function onTabContainerLayout(e){
+e){
 this._tabContainerMeasurements=e.nativeEvent.layout;
 var width=this._tabContainerMeasurements.width;
 if(width<WINDOW_WIDTH){
@@ -294,12 +279,29 @@ width=WINDOW_WIDTH;
 }
 this.setState({_containerWidth:width});
 this.updateView({value:this.props.scrollValue._value});
-},
+}},{key:"onContainerLayout",value:function onContainerLayout(
 
-onContainerLayout:function onContainerLayout(e){
+e){
 this._containerMeasurements=e.nativeEvent.layout;
 this.updateView({value:this.props.scrollValue._value});
-}});
+}}]);return ScrollableTabBar;}(_react.Component);
+
+
+ScrollableTabBar.propTypes={
+goToPage:_propTypes2.default.func,
+activeTab:_propTypes2.default.number,
+tabs:_propTypes2.default.array,
+backgroundColor:_propTypes2.default.string,
+activeTextColor:_propTypes2.default.string,
+inactiveTextColor:_propTypes2.default.string,
+scrollOffset:_propTypes2.default.number,
+style:ViewPropTypes.style,
+tabStyle:ViewPropTypes.style,
+tabsContainerStyle:ViewPropTypes.style,
+renderTab:_propTypes2.default.func,
+underlineStyle:ViewPropTypes.style,
+onScroll:_propTypes2.default.func};
+
 
 
 

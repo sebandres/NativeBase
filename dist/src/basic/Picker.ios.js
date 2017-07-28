@@ -207,11 +207,9 @@ _react2.default.createElement(_Radio.Radio,{selected:false,__source:{fileName:_j
 }}]);return PickerNB;}(_react.Component);
 
 
-PickerNB.Item=_react2.default.createClass({displayName:"Item",
-render:function render(){
-return _react2.default.createElement(_reactNative.Picker.Item,_extends({},this.props(),{__source:{fileName:_jsxFileName,lineNumber:212}}));
-}});
-
+PickerNB.Item=function(props){
+return _react2.default.createElement(_reactNative.Picker.Item,_extends({},props(),{__source:{fileName:_jsxFileName,lineNumber:211}}));
+};
 
 PickerNB.propTypes=_extends({},_reactNative.ViewPropTypes,{
 

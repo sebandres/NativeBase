@@ -1,5 +1,5 @@
-const React = require("react");
-import PropTypes from 'prop-types'; // ES6
+import React, { Component } from "react"
+import PropTypes from 'prop-types'
 const ReactNative = require("react-native");
 import { connectStyle, StyleProvider } from "native-base-shoutem-theme";
 import variable from "./../../theme/variables/platform";
@@ -9,21 +9,10 @@ import _ from "lodash";
 const { StyleSheet, View, Animated, Platform, ViewPropTypes } = ReactNative;
 const Button = require("./Button");
 
-const DefaultTabBar = React.createClass({
-  propTypes: {
-    goToPage: PropTypes.func,
-    activeTab: PropTypes.number,
-    tabs: PropTypes.array,
-    backgroundColor: PropTypes.string,
-    activeTextColor: PropTypes.string,
-    inactiveTextColor: PropTypes.string,
-    tabStyle: ViewPropTypes.style,
-    renderTab: PropTypes.func,
-    underlineStyle: ViewPropTypes.style
-  },
-  contextTypes: {
+class DefaultTabBar extends Component {
+  contextTypes = {
     theme: PropTypes.object
-  },
+  }
 
   getDefaultProps() {
     return {
@@ -31,9 +20,9 @@ const DefaultTabBar = React.createClass({
       inactiveTextColor: variable.topTabBarTextColor,
       backgroundColor: null
     };
-  },
+  }
 
-  renderTabOption(name, page) {},
+  renderTabOption(name, page) { }
 
   renderTab(
     name,
@@ -82,7 +71,7 @@ const DefaultTabBar = React.createClass({
         </Button>
       );
     }
-  },
+  }
 
   render() {
     const variables = this.context.theme
@@ -126,7 +115,19 @@ const DefaultTabBar = React.createClass({
       </TabContainer>
     );
   }
-});
+}
+
+DefaultTabBar.propTypes = {
+  goToPage: PropTypes.func,
+  activeTab: PropTypes.number,
+  tabs: PropTypes.array,
+  backgroundColor: PropTypes.string,
+  activeTextColor: PropTypes.string,
+  inactiveTextColor: PropTypes.string,
+  tabStyle: ViewPropTypes.style,
+  renderTab: PropTypes.func,
+  underlineStyle: ViewPropTypes.style
+}
 
 // module.exports = DefaultTabBar;
 const StyledTab = connectStyle(
