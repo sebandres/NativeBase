@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from 'prop-types'; // ES6
+import React, { Component } from "react";
+import PropTypes from 'prop-types';
 
 import {
   TouchableWithoutFeedback,
@@ -26,32 +26,20 @@ const styles = StyleSheet.create({
   }
 });
 
-const NativeButton = React.createClass({
-  propTypes: {
-    // Extract parent props
-    ...TouchableWithoutFeedback.propTypes,
-    textStyle: Text.propTypes.style,
-    disabledStyle: Text.propTypes.style,
-    children: PropTypes.node.isRequired,
-    underlayColor: PropTypes.string,
-    background: TouchableNativeFeedback.propTypes
-      ? TouchableNativeFeedback.propTypes.background
-      : PropTypes.any
-  },
-
-  statics: {
+class NativeButton extends Component {
+  statics = {
     isAndroid: Platform.OS === "android"
-  },
+  }
 
-  getDefaultProps: function() {
+  getDefaultProps = function () {
     return {
       textStyle: null,
       disabledStyle: null,
       underlayColor: null
     };
-  },
+  }
 
-  _renderText: function() {
+  _renderText = function () {
     // If children is not a string don't wrapp it in a Text component
     if (typeof this.props.children !== "string") {
       return this.props.children;
@@ -62,9 +50,9 @@ const NativeButton = React.createClass({
         {this.props.children}
       </Text>
     );
-  },
+  }
 
-  render: function() {
+  render = function () {
     const disabledStyle = this.props.disabled
       ? this.props.disabledStyle || styles.opacity
       : {};
@@ -91,8 +79,8 @@ const NativeButton = React.createClass({
     if (NativeButton.isAndroid) {
       buttonProps = Object.assign(buttonProps, {
         background:
-          this.props.background ||
-            TouchableNativeFeedback.SelectableBackground()
+        this.props.background ||
+        TouchableNativeFeedback.SelectableBackground()
       });
 
       return (
@@ -115,6 +103,18 @@ const NativeButton = React.createClass({
       </TouchableHighlight>
     );
   }
-});
+}
+
+NativeButton.propTypes = {
+  // Extract parent props
+  ...TouchableWithoutFeedback.propTypes,
+  textStyle: Text.propTypes.style,
+  disabledStyle: Text.propTypes.style,
+  children: PropTypes.node.isRequired,
+  underlayColor: PropTypes.string,
+  background: TouchableNativeFeedback.propTypes
+    ? TouchableNativeFeedback.propTypes.background
+    : PropTypes.any
+}
 
 export default NativeButton;
