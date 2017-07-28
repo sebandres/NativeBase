@@ -14,11 +14,9 @@ export default class PickerNB extends Component {
   }
 }
 
-PickerNB.Item = React.createClass({
-  render() {
-    return <Picker.Item {...this.props()} />;
-  }
-});
+PickerNB.Item = (props) => {
+  return <Picker.Item {...props() } />;
+}
 
 PickerNB.propTypes = {
   ...Picker.propTypes
